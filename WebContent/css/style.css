@@ -1,0 +1,98 @@
+/* ======================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0 auto;
+    padding: 0;
+}
+
+body {
+	background-color: #000000;
+	color: #000000;
+}
+
+/* ======================== */
+header {
+	margin: 20px auto;
+}
+
+.name {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+/* ======================== */
+.wrapper {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-content: space-around;
+    place-content: center;
+}
+
+.card {
+	top: 50%;
+	margin: 10px auto;
+    width: 400px;
+    height: 500px;
+    perspective: 1600px;
+}
+
+.card__inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    color: white;
+}
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.card__body {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.card__body--front {
+    background-image: radial-gradient(circle 248px at center,
+            #00ff73 0%, #5cdb95d2 47%,
+            #5cdb95 100%);
+}
+
+.card__body--me {
+    background-image: url("../img/starry-sky.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+}
+
+.card__body--coffee {
+    background-image: url("../img/coffee.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+}
+
+.card__body--back {
+    background-image: linear-gradient(60deg, rgb(58, 162, 180) 14%, rgba(255, 41, 232, 0.7931547619047619) 57%, rgba(252, 69, 79, 0.896796218487395) 89%);
+    transform: rotateY(180deg);
+    color: white;
+}
